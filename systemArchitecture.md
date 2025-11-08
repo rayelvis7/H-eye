@@ -1,7 +1,7 @@
 #  System Architecture – H-eye
 
 ##  Overview
-H-eye is a mobile app hotel management system built with a **React frontend**, **Node.js backend**, and **MongoDB database**.  
+H-eye is a mobile app hotel management system built with a **React frontend**, **Node.js backend**, and **MongoDB database**.  ###
 The goal is to provide a reliable and scalable platform for hotel owners to track daily operations.
 
 
@@ -33,6 +33,26 @@ The goal is to provide a reliable and scalable platform for hotel owners to trac
 - **Hosting**: MongoDB Atlas (cloud-based)-
 
 ---
+## Data Flow and Authentication Process
+
+### Authentication Flow
+The authentication flow manages secure access for users using either email and password or Google Signin.
+
+#### - Username and Password
+- The user opens the app and enters credentials.  
+- The app uses  `/api/signin`.  
+
+#### - Google Sign-In
+- The user taps Sign in with Google. 
+- The app use `/api/signin`. 
+
+### Room Activity and Power Tracking Flow
+ - The Hotel server using the arduino monitors room occupancy and power usage.  
+ - It uses the api  `/api/tracking-power/active-rooms`  
+
+## Total
+- This shows analytic data for the user in form of a graph like (power consumed in a time range)
+- It uses the api `/api/analytics/total-rooms-used`
 
 ##  How Components Communicate
 
@@ -44,3 +64,4 @@ Frontend (React)
 Backend (Node.js / Express)
    ↓
 Database (MongoDB)
+
